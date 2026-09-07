@@ -10,7 +10,7 @@ import AuditLogDetailsPage from "../pages/AuditLogs/AuditLogDetailsPage";
 
 function AppRoutes() {
   return (
-    <BrowserRouter basename="/super-admin-user-tenant-operations-portal">
+    <BrowserRouter basename="/super-admin-user-tenant-operations-portal-">
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
