@@ -1,75 +1,126 @@
-# React + TypeScript + Vite
+# Super Admin User & Tenant Operations Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional and responsive Super Admin portal for managing users, tenants, analytics, and audit activities.
 
-Currently, two official plugins are available:
+The application is built with React, TypeScript, and TanStack Query, with a focus on efficient server-state management, caching, pagination, filtering, CRUD operations, optimistic updates, and a clean admin dashboard experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Project Links
 
-## React Compiler
+- **GitHub Repository:** https://github.com/Santoshm15/super-admin-user-tenant-operations-portal-
+- **Live Demo:** https://santoshm15.github.io/super-admin-user-tenant-operations-portal-/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### Dashboard
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Total users overview
+- Active and inactive users
+- Tenant statistics
+- Revenue and subscription statistics
+- Recent activity
+- Refresh and background fetching states
+- Loading, error, and empty states
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### User Management
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- User listing
+- Search and filtering
+- Role and status filters
+- Tenant filtering
+- Server-side pagination
+- User details
+- User activity
+- Create user
+- Edit user
+- Delete user
+- User status toggle
+- Optimistic updates
+- Query caching and cache synchronization
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Tenant Management
 
-```
+- Tenant listing
+- Search and filtering
+- Plan and status filters
+- Pagination
+- Tenant details
+- Tenant users
+- Create tenant
+- Edit tenant
+- Delete tenant
+- Tenant status toggle
+- Optimistic updates
+- Query caching and cache synchronization
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Audit Logs
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Audit log listing
+- Search and filtering
+- User and tenant filters
+- Action and status filters
+- Date range filtering
+- Pagination
+- Audit log details
+- Related user information
+- Related tenant information
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
 
+- React
+- TypeScript
+- Vite
+- TanStack Query
+- React Router DOM
+- CSS
+- DummyJSON API
+- GitHub Pages
+
+## 📁 Project Structure
+
+```text
+src/
+├── api/
+│   ├── analytics.api.ts
+│   ├── users.api.ts
+│   ├── tenants.api.ts
+│   └── auditLogs.api.ts
+│
+├── components/
+│   ├── common/
+│   ├── dashboard/
+│   ├── users/
+│   ├── tenants/
+│   └── auditLogs/
+│
+├── hooks/
+│   └── useDebounce.ts
+│
+├── lib/
+│   └── queryClient.ts
+│
+├── pages/
+│   ├── Dashboard/
+│   ├── Users/
+│   ├── Tenants/
+│   └── AuditLogs/
+│
+├── queries/
+│   ├── queryKeys.ts
+│   ├── userQueries.ts
+│   ├── tenantQueries.ts
+│   ├── analyticsQueries.ts
+│   └── auditLogQueries.ts
+│
+├── routes/
+│   └── AppRoutes.tsx
+│
+├── types/
+│   ├── user.types.ts
+│   ├── tenant.types.ts
+│   ├── analytics.types.ts
+│   └── auditLog.types.ts
+│
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
